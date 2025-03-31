@@ -1,0 +1,8 @@
+Tavle = Files
+{
+    file_id : int()
+    filename : string
+    created_at: string
+    category: string
+    updated_at : string
+}
