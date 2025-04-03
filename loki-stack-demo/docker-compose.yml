@@ -1,5 +1,9 @@
 services:
+<<<<<<< HEAD
   # FastAPI 애플리케이션 (기존)
+=======
+  # FastAPI 애플리케이션
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba
   fastapi:
     build:
       context: ./fastapi
@@ -10,6 +14,7 @@ services:
     networks:
       - loki-network
 
+<<<<<<< HEAD
   # 부하 테스트 애플리케이션 (새로 추가)
   load-test-app:
     build:
@@ -26,6 +31,13 @@ services:
     image: nginx:1.21-alpine
     ports:
       - "8081:80"  # 8080에서 8081로 변경
+=======
+  # Nginx 리버스 프록시
+  nginx:
+    image: nginx:1.21-alpine
+    ports:
+      - "8080:80"
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx-logs:/var/log/nginx
@@ -40,7 +52,11 @@ services:
     networks:
       - loki-network
 
+<<<<<<< HEAD
   # Loki - 로그 저장소 (기존)
+=======
+  # Loki - 로그 저장소
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba
   loki:
     image: grafana/loki:2.8.2
     ports:
@@ -54,7 +70,11 @@ services:
     networks:
       - loki-network
 
+<<<<<<< HEAD
   # Promtail - 로그 수집기 (기존)
+=======
+  # Promtail - 로그 수집기
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba
   promtail:
     image: grafana/promtail:2.8.2
     volumes:
@@ -72,6 +92,7 @@ services:
     networks:
       - loki-network
 
+<<<<<<< HEAD
   # Prometheus - 메트릭 수집 (새로 추가)
   prometheus:
     image: prom/prometheus:v2.45.0
@@ -141,6 +162,9 @@ services:
       - loki-network
 
   # Grafana - 시각화 (기존)
+=======
+  # Grafana - 시각화
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba
   grafana:
     image: grafana/grafana:9.5.2
     ports:
@@ -153,15 +177,22 @@ services:
       - ./grafana-data:/var/lib/grafana
     depends_on:
       - loki
+<<<<<<< HEAD
       - prometheus
+=======
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba
     restart: unless-stopped
     networks:
       - loki-network
 
 networks:
   loki-network:
+<<<<<<< HEAD
     driver: bridge
 
 volumes:
   prometheus-data:
   alertmanager-data:
+=======
+    driver: bridge
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba

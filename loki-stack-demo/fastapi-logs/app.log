@@ -119,6 +119,7 @@
 2025-04-01 03:39:03,328 - fastapi-app - INFO - Request completed: GET /health - Took: 0.0047s
 2025-04-01 03:39:14,742 - fastapi-app - INFO - Request started: GET /erro
 2025-04-01 03:39:14,745 - fastapi-app - INFO - Request completed: GET /erro - Took: 0.0033s
+<<<<<<< HEAD
 2025-04-02 02:45:25,268 - fastapi-app - INFO - Request started: GET /metrics
 2025-04-02 02:45:25,269 - fastapi-app - INFO - Request completed: GET /metrics - Took: 0.0014s
 2025-04-02 02:45:40,256 - fastapi-app - INFO - Request started: GET /metrics
@@ -18399,3 +18400,5 @@
 2025-04-03 09:02:29,367 - fastapi-app - INFO - Request completed: GET /metrics - Took: 0.0017s
 2025-04-03 09:02:29,370 - fastapi-app - INFO - Request started: GET /metrics/
 2025-04-03 09:02:29,372 - fastapi-app - INFO - Request completed: GET /metrics/ - Took: 0.0026s
+=======
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba

@@ -2,7 +2,10 @@ import logging
 import time
 from fastapi import FastAPI, Request
 from datetime import datetime
+<<<<<<< HEAD
 from prometheus_client import Counter, Histogram, make_asgi_app
+=======
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba
 
 # 로깅 설정
 logging.basicConfig(
@@ -18,6 +21,7 @@ logger = logging.getLogger("fastapi-app")
 
 app = FastAPI()
 
+<<<<<<< HEAD
 # Prometheus 메트릭 설정
 REQUEST_COUNT = Counter(
     "fastapi_requests_total",
@@ -34,6 +38,8 @@ REQUEST_LATENCY = Histogram(
 metrics_app = make_asgi_app()
 app.mount("/metrics", metrics_app)
 
+=======
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
     start_time = time.time()
@@ -47,6 +53,7 @@ async def log_requests(request: Request, call_next):
     process_time = time.time() - start_time
     logger.info(f"Request completed: {request.method} {request.url.path} - Took: {process_time:.4f}s")
 
+<<<<<<< HEAD
     # Prometheus 메트릭 기록
     # /metrics 엔드포인트는 제외
     if not request.url.path.startswith("/metrics"):
@@ -60,6 +67,8 @@ async def log_requests(request: Request, call_next):
             endpoint=request.url.path
         ).observe(process_time)
 
+=======
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba
     return response
 
 @app.get("/")

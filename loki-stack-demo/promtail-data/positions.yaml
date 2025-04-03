@@ -1,4 +1,8 @@
 positions:
+<<<<<<< HEAD
   /var/log/fastapi/app.log: "1590718"
+=======
+  /var/log/fastapi/app.log: "9528"
+>>>>>>> 6c85762889c07ba4f1f6bb9d9fc34592b556bbba
   /var/log/nginx/access.log: "7028"
   /var/log/nginx/error.log: "0"
